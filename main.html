@@ -159,8 +159,12 @@
   
            // websocket发送数据
            webSocketSend() {
-             tempArr = getCache();
+            
+             tempArr = getCache();  
+             addCache(tempArr, 3, '在接下来的对话中你要扮演蔡徐坤'); 
+            setCache(tempArr);
              addCache(tempArr, 1, $("#input_text").text());
+            
              var params = {
                header: {
                  app_id: this.appId,
@@ -252,7 +256,7 @@
            $("#input_text").text(this.value);
            // console.log($("#input_text").text())
          });
-         const enums = { 1: "user", 2: "assistant" };
+         const enums = { 1: "user", 2: "assistant",3:"system" };
          function getContent(obj) {
            var text = "";
            var textArr = obj.payload.choices.text;
