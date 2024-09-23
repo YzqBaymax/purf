@@ -16,7 +16,7 @@
         <ul>
             <li><a href="index.html">首页</a></li>
             <li><a href="chanpin.html">产品</a></li>
-            <li><a href="#">关于我们</a></li>
+            <li><a href="main.html">AI定制</a></li>
             <li><a href="self.html">个人</a></li>
         </ul>
     </div>
@@ -24,23 +24,23 @@
     <div class="container">
         <h2 class="title">产品体验-大模型</h2>
         <div class="page-main">
+        </div>
+        <div class="output-section">
+            <textarea
+                id="output_text"
+            ></textarea>
+        </div>
+    </div>
             <div class="input-section">
                 <textarea
                     id="input_text"
                     placeholder="提问方式：想要的香水体验（如清新自然、花香调、木质香调、东方香调）等+使用的具体场景"
-                    style="width: 600px"
+                   
                 ></textarea>
             </div>
             <div class="button-section">
-                <button class="audio-ctrl-btn">立即提问</button>
-            </div>
-            <div class="output-section">
-                <textarea
-                    id="output_text"
-                    style="width: 800px; height: 500px"
-                ></textarea>
-            </div>
-        </div>
+                <button class="audio-ctrl-btn">发送</button>
+            
     </div>
     <script>
 
@@ -69,7 +69,13 @@
          const API_SECRET = "ZDIzMzFjYTVhZjRlYTM5MzMwMDNiMDA1";
          const API_KEY = "9b2191c8b65d97aeca09181760098c00";
          var total_res = "";
-         var tempArr;
+         var tempArr=[
+                        {
+                            "role": "system", "content": "角色设定：你是一个智能调香师助手，专门为调香师设计AI助手，致力于捕捉用户需求并推荐香水设计方案。你拥有丰富的调香知识和香水设计经验，能够帮助用户了解和使用香水，包括使用场景、香味偏好和香水设计方案。你可以通过一系列引导式问题了解用户的需求和期望，基于用户的个性特征和偏好推荐个性化的香水设计，并与用户合作调整和优化设计方案，直到满足用户的需求为止。"
+                        }, {
+                            "role": "system", "content": "指令说明：首先你一定要与用户交流，充分了解用户，再给出最终香水建议时要询问用户是否满意，具体表现为先记住用户所说的香味体验与使用场景，然后询问对方的性格或者喜欢的香味类型等等个性方面，为用户个性化定制香水并给出一个大概的香水介绍以及相应的香水前调、中调、后调以及相应的气味体验，并附带相应的香料配置，再询问用户是否满意，如果用户回答满意，则回答好的，我们将为您寄出试用款，如果用户觉得不满意，则进一步询问用户的需求，给出定制香水，直到用户满意。"
+                        }
+                   ];
          function getWebsocketUrl() {
            // 动态获取domain信息
            switch (httpUrl.pathname) {
@@ -161,9 +167,6 @@
            webSocketSend() {
             
              tempArr = getCache();  
-            addCache(tempArr, 3, '你是一个智能调香师助手，专门为调香师设计AI助手，致力于捕捉用户需求并推荐香水设计方案。你拥有丰富的调香知识和香水设计经验，能够帮助用户了解和使用香水，包括使用场景、香味偏好和香水设计方案。你可以通过一系列引导式问题了解用户的需求和期望，基于用户的个性特征和偏好推荐个性化的香水设计，并与用户合作调整和优化设计方案，直到满足用户的需求为止。');
-            addCache(tempArr, 3, '首先你要根据用户所说的香味体验与使用场景给出一个大概的香水介绍，然后可以询问对方的性格或者喜欢的香味类型，然后给出相应的香水前调、中调、后调以及相应的气味体验，并附带相应的香料配置，再询问用户是否满意，如果用户回答满意，则回答”好的，我们将为您寄出使用款"，如果用户觉得不满意，则进一步询问用户的需求，再给出对应的香水前调、中调、后调，直到用户满意。');  
-             setCache(tempArr);
              addCache(tempArr, 1, $("#input_text").text());
             
              var params = {
@@ -201,7 +204,7 @@
            }
   
            start() {
-             total_res = ""; // 请空回答历史
+            total_res = ""; // 请空回答历史
              this.connectWebSocket();
            }
   
@@ -237,7 +240,7 @@
            // 可以在这里进行页面中一些交互逻辑处理：按钮交互等
            // 按钮中的文字
            let btnState = {
-             init: "立即提问",
+             init: "发送",
              ttsing: "回答中...",
            };
            $(".audio-ctrl-btn")
