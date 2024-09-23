@@ -119,56 +119,11 @@ nav .menu {
     transition: all 0.5s ease;
 }
 
-.center .btns button:first-child {
-    color: #fff;
-    background: none;
-}
+
 
 .center .btns button:first-child:hover {
     background: white;
     color: black;
 }
 
-.center .btns button:last-child {
-    background: white;
-    color: black;
-}
 
-/* 新增的文字部分 */
-.text-block {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    width: 30%;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center; /* 居中对齐每行文字 */
-    overflow: hidden; /* 防止溢出 */
-}
-
-.text-block p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #333;
-    text-align: center; /* 居中对齐每行文字 */
-    animation: scrollUp 10s linear forwards; /* 添加滚动动画 */
-}
-
-/* 定义动画 */
-@keyframes scrollUp {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.text-block p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #333;
-}

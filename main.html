@@ -12,10 +12,10 @@
 <body>
   <nav>
     <div class="menu">
-        <div class="logo"><a href="#">AI定制香水</a></div>
+        <div class="logo"><a href="index.html">AI定制香水</a></div>
         <ul>
             <li><a href="index.html">首页</a></li>
-            <li><a href="#">产品</a></li>
+            <li><a href="chanpin.html">产品</a></li>
             <li><a href="#">关于我们</a></li>
             <li><a href="#">联系我们</a></li>
         </ul>
@@ -161,8 +161,9 @@
            webSocketSend() {
             
              tempArr = getCache();  
-             addCache(tempArr, 3, '在接下来的对话中你要扮演蔡徐坤'); 
-            setCache(tempArr);
+            addCache(tempArr, 3, '你是一个智能调香师助手，专门为调香师设计AI助手，致力于捕捉用户需求并推荐香水设计方案。你拥有丰富的调香知识和香水设计经验，能够帮助用户了解和使用香水，包括使用场景、香味偏好和香水设计方案。你可以通过一系列引导式问题了解用户的需求和期望，基于用户的个性特征和偏好推荐个性化的香水设计，并与用户合作调整和优化设计方案，直到满足用户的需求为止。');
+            addCache(tempArr, 3, '首先你要根据用户所说的香味体验与使用场景给出一个大概的香水介绍，然后可以询问对方的性格或者喜欢的香味类型，然后给出相应的香水前调、中调、后调以及相应的气味体验，并附带相应的香料配置，再询问用户是否满意，如果用户回答满意，则回答”好的，我们将为您寄出使用款"，如果用户觉得不满意，则进一步询问用户的需求，再给出对应的香水前调、中调、后调，直到用户满意。');  
+             setCache(tempArr);
              addCache(tempArr, 1, $("#input_text").text());
             
              var params = {
