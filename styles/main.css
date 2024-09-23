@@ -20,7 +20,7 @@ nav {
 
 nav .menu {
     max-width: 1250px;
-    margin: auto;   
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,6 +61,7 @@ nav .menu {
     background: #fff;
     color: black;
 }
+
 
 body {
     background: #f5f5f5;
