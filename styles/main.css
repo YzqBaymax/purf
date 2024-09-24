@@ -115,9 +115,9 @@ body {
 }
 
 .button-section button {
-    position: absolute;    
-    left: 1300px ; 
-    bottom: 68px;
+    position: relative;
+    bottom: 485px;
+    left:78%;
     margin-bottom: 50px;         /* 距离底部有一定间距 */
     margin-top: 180px;                    /* 添加这一行来实现靠右对齐 */
     margin-top: 180px;
