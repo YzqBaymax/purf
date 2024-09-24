@@ -62,22 +62,18 @@ nav .menu {
     color: black;
 }
 
-.img {
-    background: url(head.png) no-repeat;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -1; /* 将视频置于所有其他元素之下 */
 }
 
-.img::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
 
 .center {
     position: absolute;
