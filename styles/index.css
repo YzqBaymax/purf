@@ -5,6 +5,24 @@
     font-family: 'Microsoft YaHei', sans-serif;
 }
 
+.video-container {
+    /* 使用Flexbox布局 */
+    display: flex;
+    /* 居中对齐 */
+    align-items: center;
+    /* 设置容器的高度，可以根据需要调整 */
+    height: 8vh; /* vh单位表示viewport高度的百分比 */
+    /* 设置容器的背景颜色或背景图，以防止未加载时空白 */
+    background-color: #f0f0f0;
+}
+
+#background-video {
+    /* 设置视频的最大宽度 */
+    max-width: 100%;
+    /* 设置视频的高度，auto使得视频保持原有宽高比 */
+    height: auto;
+}
+
 ::selection {
     color: #000;
     background: #fff;

@@ -133,11 +133,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.button-section button:hover {
-    background-color: #1468d3;
-    position: absolute;   
-    right:0;
-}
+
 
 .output-section {
     display: flex;
