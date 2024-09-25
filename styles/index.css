@@ -11,7 +11,7 @@
     /* 居中对齐 */
     align-items: center;
     /* 设置容器的高度，可以根据需要调整 */
-    height: 8vh; /* vh单位表示viewport高度的百分比 */
+    height: 5vh; /* vh单位表示viewport高度的百分比 */
     /* 设置容器的背景颜色或背景图，以防止未加载时空白 */
     background-color: #f0f0f0;
 }
