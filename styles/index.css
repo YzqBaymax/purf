@@ -107,6 +107,7 @@ nav .menu {
     color: #fff;
     font-size: 55px;
     font-weight: 600;
+    opacity: 1;  // 设置不透明度为50%
 }
 
 .center .sub_title {
@@ -122,7 +123,7 @@ nav .menu {
 .center .btns button {
     height: 55px;
     width: 170px;
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 0 10px;
     border: 2px solid white;
     font-size: 20px;
@@ -131,6 +132,7 @@ nav .menu {
     cursor: pointer;
     outline: none;
     transition: all 0.5s ease;
+
 }
 
 

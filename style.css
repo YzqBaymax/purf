@@ -42,24 +42,27 @@ body{
     font-size: 15px;
     color: #333;
     margin-bottom: 40px;
+    border-radius: 100px
 }
-
 .main button{
+    border-radius: 20px;
+    opacity: 0.9;
     padding-left: 0;
-    background-color: #83acf1;
+    background-color: #e3fdfd;
     letter-spacing: 1px;
     font-weight: bold;
     margin-bottom: 70px;
 }
 
 .main button:hover{
-    box-shadow: 2px 2px 5px #555;
-    background-color: #7799d4;
+    opacity:1;
+    cursor:pointer;
+    box-shadow: 4x 4px 4px #555;
 }
 .main input:hover{
-    box-shadow: 2px 2px 5px #555;
-    background-color: #ddd;
-}
+    box-shadow: 4x 4px 10px #555;
+    background-color: #f7f5f5;
+}  
 
 .main span{
     /* 相对定位 */
